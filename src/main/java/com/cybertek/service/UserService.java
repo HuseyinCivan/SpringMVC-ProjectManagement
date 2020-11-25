@@ -18,6 +18,4 @@ public interface UserService extends CrudService<UserDTO,String>{
 
 
 
-
-
 }
