@@ -1,9 +1,6 @@
 package com.cybertek.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import  lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -13,6 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class BaseEntity {
+
     private Long id;
     private LocalDateTime insertDateTime;
     private Long insertUserId;

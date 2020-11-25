@@ -5,9 +5,9 @@ import com.cybertek.dto.UserDTO;
 import com.cybertek.enums.Gender;
 import com.cybertek.service.RoleService;
 import com.cybertek.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
 
 @Component
 public class DataGenerator implements CommandLineRunner {
@@ -15,6 +15,7 @@ public class DataGenerator implements CommandLineRunner {
     RoleService roleService;
     UserService userService;
 
+    @Autowired
     public DataGenerator(RoleService roleService, UserService userService) {
         this.roleService = roleService;
         this.userService = userService;
@@ -23,12 +24,9 @@ public class DataGenerator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        RoleDTO adminRole = new RoleDTO(1l, "Admin");
-        RoleDTO managerRole = new RoleDTO(1l, "Manager");
-        RoleDTO employeeRole = new RoleDTO(1l, "Employee");
-
-//        RoleServiceImpl r= new RoleServiceImpl();
-//        r.save(adminRole);
+        RoleDTO adminRole = new RoleDTO(1L,"Admin");
+        RoleDTO managerRole = new RoleDTO(2L,"Manager");
+        RoleDTO employeeRole = new RoleDTO(3L,"Employee");
 
         roleService.save(adminRole);
         roleService.save(managerRole);
@@ -50,6 +48,8 @@ public class DataGenerator implements CommandLineRunner {
         userService.save(user3);
         userService.save(user4);
         userService.save(user5);
+
+
 
 
     }
