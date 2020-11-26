@@ -32,12 +32,12 @@
                                 <div class="panel-body">
 
                                     <!-- ------------------------FORM START----------------------------- -->
-                                    <form>
+                                    <form class="needs-validation" novalidate th:action="@{project/create}"method="post" th:object="${project}">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Project Name</label>
-                                                    <input id="projectname" type="text" placeholder="project name" class="form-control" required>
+                                                    <input id="projectname" type="text" placeholder="project name" th:field="*{projectName}" class="form-control" required>
                                                     <div class="invalid-feedback">Please enter project name.</div>
                                                 </div>
                                             </div>
@@ -46,7 +46,7 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Project Code</label>
-                                                    <input id="projectcode" type="text" placeholder="project code" class="form-control" required>
+                                                    <input id="projectcode" type="text" placeholder="project code" th:field="*{projectCode}" class="form-control" required>
                                                     <div class="invalid-feedback">Please enter project code.</div>
                                                 </div>
                                             </div>
@@ -69,13 +69,13 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Project Start Date</label>
-                                                    <input type="date" class="form-control">
+                                                    <input type="date" th:field="*{startDate}" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Project End Date</label>
-                                                    <input type="date" class="form-control">
+                                                    <input type="date" th:field="*{endDate}" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -83,7 +83,7 @@
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label>Project Detail</label>
-                                                    <textarea class="form-control" required></textarea>
+                                                    <textarea class="form-control" th:field="*{projectDetail}"required></textarea>
                                                 </div>
                                             </div>
                                         </div>
